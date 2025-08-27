@@ -1,0 +1,33 @@
+{
+  "description": "Vendure plugin for communicating via seven.io.",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "files": [
+    "dist/**/*",
+    "CHANGELOG.md",
+    "README.md",
+    "docs"
+  ],
+  "homepage": "https://www.seven.io",
+  "keywords": [
+    "plugin",
+    "sms",
+    "vendure"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "name": "@seven.io/vendure-plugin",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "https://github.com/seven-io/vendure",
+  "scripts": {
+    "dev": "ts-node dev-server/index.ts",
+    "codegen": "ts-node generate-types.ts",
+    "build": "rimraf dist && tsc -p ./tsconfig.build.json && ts-node copy-ui-src.ts",
+    "e2e": "cross-env PACKAGE=seven-plugin vitest -c ../../utils/e2e/vitest.config.mts"
+  },
+  "types": "dist/index.d.ts",
+  "version": "0.0.1"
+}
